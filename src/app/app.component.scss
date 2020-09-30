@@ -11,6 +11,11 @@ body {
 .lang-active {
     background-color: coral;
     color: white;
+    cursor: pointer;
+}
+
+.card-header .nav-link {
+    cursor: pointer;
 }
 
 .control-actions {
@@ -44,4 +49,9 @@ body {
 .lang-row {
     margin: 4px 0;
 
+}
+
+.form{
+    text-align: start;
+    padding-top: 20px;
 }
