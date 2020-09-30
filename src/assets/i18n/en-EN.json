@@ -1,0 +1,31 @@
+{
+    "HOME": {
+        "TITLE": "Datnek - Test Application"
+    },
+    "LANG": {
+        "FRENCH": "French",
+        "ENGLISH": "English",
+        "DUTCH": "Dutch"
+    },
+    "FORM": {
+        "TITLE": "Add a new language",
+        "LANGUAGE": "Language",
+        "SPEAK_LABEL": "Write level",
+        "WRITE_LABEL": "Speak level",
+        "LISTEN_LABEL": "Understanding level",
+        "SAVE_LABEL": "Save"
+    },
+    "LEVELS": {
+        "ONE": "Pre-intermediate",
+        "TWO": "Intermediate",
+        "TREE": "Elementary",
+        "FOUR": "Current"
+    },
+    "LANG_NUMBER_LABEL": "Number of Languages",
+    "USER_LANG": {
+        "TITLE": "List of languages",
+        "EDIT_LABEL": "Edit",
+        "DETAILS_LABEL": "Détails",
+        "DELETE_LABEL": "Delete"
+    }
+}

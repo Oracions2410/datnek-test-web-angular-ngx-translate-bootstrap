@@ -3,9 +3,9 @@
 <div class="container">
   <div class="mt-10">
 
-    <!--
+    <!---
     <div>
-      <h2>{{ 'HOME.TITLE' | translate }}</h2>
+      <h2>{{ 'FORM.TITLE' | translate }}</h2>
       <label>
         {{ 'HOME.SELECT' | translate }}
         <select #langSelect (change)="translate.use(langSelect.value)">
@@ -13,8 +13,8 @@
             {{ lang }}</option>
         </select>
       </label>
-    </div>  
-  -->
+    </div>
+-->
 
 
 
@@ -29,55 +29,27 @@
             <ul class="nav nav-pills card-header-pills">
 
               <li class="nav-item">
-                <a class="nav-link " [ngClass]="{'lang-active': activeLang.notation === 'fr'}"
-                  (click)="changeLang('fr')">Francais</a>
+                <a class="nav-link " [ngClass]="{'lang-active': activeLang.notation === 'fr-FR'}"
+                  (click)="changeLang('fr-FR')">{{ 'LANG.FRENCH' | translate }}</a>
               </li>
 
               <li class="nav-item">
-                <a class="nav-link" [ngClass]="{'lang-active': activeLang.notation === 'en'}"
-                  (click)="changeLang('en')">Englais</a>
+                <a class="nav-link" [ngClass]="{'lang-active': activeLang.notation === 'en-EN'}"
+                  (click)="changeLang('en-EN')">{{ 'LANG.ENGLISH' | translate }}</a>
               </li>
 
               <li class="nav-item">
-                <a class="nav-link" [ngClass]="{'lang-active': activeLang.notation === 'nl'}"
-                  (click)="changeLang('nl')">Neelandais</a>
+                <a class="nav-link" [ngClass]="{'lang-active': activeLang.notation === 'nl-NL'}"
+                  (click)="changeLang('nl-NL')">{{ 'LANG.DUTCH' | translate }}</a>
               </li>
             </ul>
             <!--------X--------Languages List -----------X-------------->
           </div>
 
+          <!---Modal--->
           <div class="col-md-2">
-            <!-- ------------Modal button--------------------->
 
-            <!-- Button trigger modal -->
-            <button type="button" class="btn btn-block btn-warning" data-toggle="modal" data-target="#exampleModal">
-              Modal
-            </button>
-
-            <!-- Modal -->
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-              aria-hidden="true">
-              <div class="modal-dialog">
-                <div class="modal-content">
-
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-
-                  <div class="modal-body">
-                    ...
-                  </div>
-
-                </div>
-              </div>
-            </div>
-
-
-            <!-- ----x-------Modal button-----------x--------->
-
+            <app-modal></app-modal>
           </div>
         </div>
 
@@ -88,24 +60,28 @@
 
 
         <div class="row">
-          <h2 class="text-success">{{ activeLang.name }}</h2>
+          <h2 *ngIf="activeLang.notation === 'fr-FR'" class="text-success">{{ 'LANG.FRENCH' | translate }}</h2>
+          <h2 *ngIf="activeLang.notation === 'en-EN'" class="text-success">{{ 'LANG.ENGLISH' | translate }}</h2>
+          <h2 *ngIf="activeLang.notation === 'nl-NL'" class="text-success">{{ 'LANG.DUTCH' | translate }}</h2>
         </div>
 
         <!----------------- Form and lang count content ---------------------->
         <div class="row form">
 
           <div class="add-lang-form-card col-md-7">
-            <h4>Ajouter une langugue</h4>
+            <h4>{{ 'FORM.TITLE' | translate }}</h4>
             <form>
               <div class="row">
 
                 <div class="col-md-6">
 
                   <div class="form-group">
-                    <label for="">Langue</label>
+                    <label for="">{{ 'FORM.LANGUAGE' | translate }}</label>
                     <select class="form-control form-control-sm">
                       <option *ngFor="let language of lang; let index = i" [attr.data-index]="i">
-                        {{ language.name }}
+                        <span *ngIf="language.notation === 'fr-FR'">{{ 'LANG.FRENCH' | translate }}</span>
+                        <span *ngIf="language.notation === 'en-EN'">{{ 'LANG.ENGLISH' | translate }}</span>
+                        <span *ngIf="language.notation === 'nl-NL'">{{ 'LANG.DUTCH' | translate }}</span>
                       </option>
                     </select>
                   </div>
@@ -115,10 +91,13 @@
                 <div class="col-md-6">
 
                   <div class="form-group">
-                    <label for="">Niveau comprehension</label>
+                    <label for="">{{  'FORM.SPEAK_LABEL' | translate }}</label>
                     <select class="form-control form-control-sm">
                       <option *ngFor="let level of levels; let index = i" [attr.data-index]="i">
-                        {{ level.label }}
+                        <span *ngIf="level.number === 0">{{ 'LEVELS.ONE' | translate }}</span>
+                        <span *ngIf="level.number === 1">{{ 'LEVELS.TWO' | translate }}</span>
+                        <span *ngIf="level.number === 2">{{ 'LEVELS.TREE' | translate }}</span>
+                        <span *ngIf="level.number === 3">{{ 'LEVELS.FOUR' | translate }}</span>
                       </option>
                     </select>
                   </div>
@@ -128,10 +107,13 @@
                 <div class="col-md-6">
 
                   <div class="form-group">
-                    <label for="">Niveau ecris</label>
+                    <label for="">{{  'FORM.WRITE_LABEL' | translate }}</label>
                     <select class="form-control form-control-sm">
                       <option *ngFor="let level of levels; let index = i" [attr.data-index]="i">
-                        {{ level.label }}
+                        <span *ngIf="level.number === 0">{{ 'LEVELS.ONE' | translate }}</span>
+                        <span *ngIf="level.number === 1">{{ 'LEVELS.TWO' | translate }}</span>
+                        <span *ngIf="level.number === 2">{{ 'LEVELS.TREE' | translate }}</span>
+                        <span *ngIf="level.number === 3">{{ 'LEVELS.FOUR' | translate }}</span>
                       </option>
                     </select>
                   </div>
@@ -143,16 +125,22 @@
                 <div class="col-md-6">
 
                   <div class="form-group">
-                    <label for="">Niveau parlé</label>
+                    <label for="">{{  'FORM.LISTEN_LABEL' | translate }}</label>
                     <select class="form-control form-control-sm">
                       <option *ngFor="let level of levels; let index = i" [attr.data-index]="i">
-                        {{ level.label }}
-                      </option>
+                        <span *ngIf="level.number === 0">{{ 'LEVELS.ONE' | translate }}</span>
+                        <span *ngIf="level.number === 1">{{ 'LEVELS.TWO' | translate }}</span>
+                        <span *ngIf="level.number === 2">{{ 'LEVELS.TREE' | translate }}</span>
+                        <span *ngIf="level.number === 3">{{ 'LEVELS.FOUR' | translate }}</span> </option>
                     </select>
                   </div>
 
                 </div>
 
+              </div>
+
+              <div class="form-group">
+                <button class="btn btn-block btn-primary btn-sm">{{ 'FORM.SAVE_LABEL' | translate }}</button>
               </div>
             </form>
 
@@ -161,7 +149,7 @@
           <div class="lang-count col-md-3">
             <div class="card text-white lang-active" style="margin: auto;">
               <div class="card-body">
-                <h5 class="card-title">Nombre de langues<br />{{ userLang.length }}</h5>
+                <h5 class="card-title">{{ 'LANG_NUMBER_LABEL' | translate }}<br />{{ userLang.length }}</h5>
 
               </div>
             </div>
@@ -172,9 +160,9 @@
 
 
         <!----------------- lang list card ---------------------->
-        <div class="row jumbotron">
+        <div class="row lang-list">
 
-
+          <h4>{{ 'USER_LANG.TITLE' | translate }}</h4>
           <!------------------------ Lang Row -------------------------->
 
           <div *ngFor="let language of userLang; let index = i" [attr.data-index]="i" class="card col-12 lang-row">
@@ -183,22 +171,33 @@
                 <div class="col-md-8">
 
                   <div class="lang-name">
-                    <span>{{ language.name }}</span>
+                    <span *ngIf="language.notation === 'fr-FR'">{{ 'LANG.FRENCH' | translate }}</span>
+                    <span *ngIf="language.notation === 'en-EN'">{{ 'LANG.ENGLISH' | translate }}</span>
+                    <span *ngIf="language.notation === 'nl-NL'">{{ 'LANG.DUTCH' | translate }}</span>
                   </div>
 
                   <div class="lang-speak">
-                    <span class="title">Niveau parlé:&nbsp;</span>
-                    <span>{{ showLevelLabel(language.speak) }}</span>
+                    <span class="title">{{ 'FORM.SPEAK_LABEL' | translate}}:&nbsp;</span>
+                    <span *ngIf=" language.speak == 0">{{ 'LEVELS.ONE' | translate }}</span>
+                    <span *ngIf=" language.speak == 1">{{ 'LEVELS.TWO' | translate }}</span>
+                    <span *ngIf=" language.speak == 2">{{ 'LEVELS.TREE' | translate }}</span>
+                    <span *ngIf=" language.speak == 3">{{ 'LEVELS.FOUR' | translate }}</span>
                   </div>
 
                   <div class="lang-write">
-                    <span class="title">Niveau écris:&nbsp;</span>
-                    <span>{{ showLevelLabel(language.write) }}</span>
+                    <span class="title">{{ 'FORM.WRITE_LABEL' | translate}}:&nbsp;</span>
+                    <span *ngIf=" language.write == 0">{{ 'LEVELS.ONE' | translate }}</span>
+                    <span *ngIf=" language.write == 1">{{ 'LEVELS.TWO' | translate }}</span>
+                    <span *ngIf=" language.write == 2">{{ 'LEVELS.TREE' | translate }}</span>
+                    <span *ngIf=" language.write == 3">{{ 'LEVELS.FOUR' | translate }}</span>
                   </div>
 
                   <div class="lang-listen">
-                    <span class="title">Niveau comprehension:&nbsp;</span>
-                    <span>{{ showLevelLabel(language.listen) }}</span>
+                    <span class="title">{{ 'FORM.LISTEN_LABEL' | translate}}:&nbsp;</span>
+                    <span *ngIf=" language.listen == 0">{{ 'LEVELS.ONE' | translate }}</span>
+                    <span *ngIf=" language.listen == 1">{{ 'LEVELS.TWO' | translate }}</span>
+                    <span *ngIf=" language.listen == 2">{{ 'LEVELS.TREE' | translate }}</span>
+                    <span *ngIf=" language.listen == 3">{{ 'LEVELS.FOUR' | translate }}</span>
                   </div>
 
 
@@ -206,9 +205,10 @@
                 <div class="col-md-2">
 
                   <div class="control-actions">
-                    <button class="btn btn-sm btn-block btn-success">Modifier</button>
-                    <button class="btn btn-sm btn-block btn-warning">Details</button>
-                    <button class="btn btn-sm btn-block btn-danger">Supprimer</button>
+                    <button class="btn btn-sm btn-block btn-success">{{ 'USER_LANG.EDIT_LABEL' | translate }}</button>
+                    <button
+                      class="btn btn-sm btn-block btn-warning">{{ 'USER_LANG.DETAILS_LABEL' | translate }}</button>
+                    <button class="btn btn-sm btn-block btn-danger">{{ 'USER_LANG.DELETE_LABEL' | translate }}</button>
                   </div>
                 </div>
               </div>

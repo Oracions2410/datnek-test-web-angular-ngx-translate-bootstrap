@@ -12,27 +12,29 @@ export class AppComponent {
 
   lang: any = [
     {
-      notation: 'fr',
+      notation: 'fr-FR',
       name: 'Francais'
     },
     {
-      notation: 'en',
+      notation: 'en-EN',
       name: 'Englais'
     },
     {
-      notation: 'nl',
+      notation: 'nl-NL',
       name: 'Néerlandais'
     }
   ]
 
   userLang: any = [
     {
+      notation: 'en-EN',
       name: 'Englais',
       speak: 3,
       write: 0,
       listen: 0
     },
     {
+      notation: 'nl-NL',
       name: 'Néerlandais',
       speak: 0,
       write: 0,
@@ -63,7 +65,7 @@ export class AppComponent {
 
   constructor(public translate: TranslateService) {
     translate.addLangs(['en-US', 'fr-FR', 'nl-NL']);
-    translate.setDefaultLang('fr-FR');
+    translate.setDefaultLang('en-EN');
 
     const browserLang = translate.getBrowserLang();
     translate.use(browserLang.match(/fr|fr-FR/) ? 'fr-FR' : 'en-US');
@@ -75,6 +77,8 @@ export class AppComponent {
 
 
   changeLang(langNotation) {
+    console.log('---->', langNotation)
+    this.translate.use(langNotation)
     this.activeLang = langNotation
     this.lang.map(lang => {
       if (lang.notation === langNotation) {
@@ -88,6 +92,8 @@ export class AppComponent {
   showLevelLabel(levelNumber) {
     const level = this.levels.filter(level => level.number === levelNumber)
     //console.log(level[0])
-    return (level && level[0] && level[0].number < 4) ? level[0].label : this.levels[0].label
+    return (level && level[0] && level[0].number < 4) ? level[0].label.number : 0
   }
+
+
 }

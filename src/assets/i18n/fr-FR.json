@@ -1,6 +1,31 @@
 {
     "HOME": {
-        "TITLE": "Bonjour Angular avec ngx-translate !",
-        "SELECT": "Changer la langue"
+        "TITLE": "Datnek - Application de teste"
+    },
+    "LANG": {
+        "FRENCH": "Francais",
+        "ENGLISH": "Anglais",
+        "DUTCH": "Néelandais"
+    },
+    "FORM": {
+        "TITLE": "Ajouter une language",
+        "LANGUAGE": "Langue",
+        "SPEAK_LABEL": "Niveau écris",
+        "WRITE_LABEL": "Niveau parlé",
+        "LISTEN_LABEL": "Niveau de compréhension",
+        "SAVE_LABEL": "Enregistrer"
+    },
+    "LEVELS": {
+        "ONE": "Pré-intermediaire",
+        "TWO": "Intermediaire",
+        "TREE": "Elementaire",
+        "FOUR": "Courant"
+    },
+    "LANG_NUMBER_LABEL": "Nombre de langues",
+    "USER_LANG": {
+        "TITLE": "Liste des langues",
+        "EDIT_LABEL": "Modifier",
+        "DETAILS_LABEL": "Détails",
+        "DELETE_LABEL": "Supprimer"
     }
 }

@@ -1,6 +1,31 @@
 {
     "HOME": {
-        "TITLE": "Hallo Angular met ngx-translate!",
-        "SELECT": "Verander de taal"
+        "TITLE": "Datnek - Toepassing van"
+    },
+    "LANG": {
+        "FRENCH": "Frans",
+        "ENGLISH": "Engels",
+        "DUTCH": "Nederlands"
+    },
+    "FORM": {
+        "TITLE": "Voeg taal toe",
+        "LANGUAGE": "taal",
+        "SPEAK_LABEL": "Geschreven niveau",
+        "WRITE_LABEL": "Gesproken niveau",
+        "LISTEN_LABEL": "Niveau begrijpen",
+        "SAVE_LABEL": "Opnemen"
+    },
+    "LEVELS": {
+        "ONE": "Pre-tussenpersoon",
+        "TWO": "tussenpersoon",
+        "TREE": "Elementair",
+        "FOUR": "Actueel"
+    },
+    "LANG_NUMBER_LABEL": "Aantal talen",
+    "USER_LANG": {
+        "TITLE": "Lijst met talen",
+        "EDIT_LABEL": "Bewerken",
+        "DETAILS_LABEL": "Details",
+        "DELETE_LABEL": "verwijderen"
     }
 }

@@ -1,11 +1,9 @@
-
-body {
-    background-color: #000;
-}
 .main {
     background-color: #EEE;
     color: #007Bff;
-    margin-top: 20px
+    margin: 20px auto;
+    padding: 5px;
+    transition: all 2s ease-out!important;
 }
 
 .lang-active {
@@ -54,4 +52,10 @@ body {
 .form{
     text-align: start;
     padding-top: 20px;
+}
+.lang-list {
+    padding: 15px;
+    h4 {
+        color: #000;
+    }
 }
