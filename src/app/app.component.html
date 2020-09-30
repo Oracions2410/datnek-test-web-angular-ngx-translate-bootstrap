@@ -2,6 +2,7 @@
 <div class="container">
   <div class="mt-10">
 
+    <!--
     <div>
       <h2>{{ 'HOME.TITLE' | translate }}</h2>
       <label>
@@ -11,7 +12,299 @@
             {{ lang }}</option>
         </select>
       </label>
+    </div>  
+  -->
+
+
+
+    <div class="main card text-center">
+
+      <div class="card-header">
+
+        <div class="row">
+          <div class="col-md-10">
+
+            <!-----------------Languages List -------------------------->
+            <ul class="nav nav-pills card-header-pills">
+              <li class="nav-item">
+                <a class="nav-link lang-active" href="#">Francais</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Englais</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Neelandais</a>
+              </li>
+            </ul>
+            <!--------X--------Languages List -----------X-------------->
+          </div>
+
+          <div class="col-md-2">
+            <!-- ------------Modal button--------------------->
+
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-block btn-warning" data-toggle="modal" data-target="#exampleModal">
+              Modal
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+
+                  <div class="modal-body">
+                    ...
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+
+            <!-- ----x-------Modal button-----------x--------->
+
+          </div>
+        </div>
+
+
+      </div>
+
+      <div class="card-body">
+
+
+        <div class="row">
+          <h2 class="text-success">Francais</h2>
+        </div>
+
+        <!----------------- Form and lang count content ---------------------->
+        <div class="row">
+
+          <div class="add-lang-form-card col-md-7">
+
+            <fom>
+              <div class="row">
+
+                <div class="col-md-6">
+
+                  <div class="form-group">
+                    <label for="">Langue</label>
+                    <select class="form-control form-control-sm">
+                      <option>Small select</option>
+                    </select>
+                  </div>
+
+                </div>
+
+                <div class="col-md-6">
+
+                  <div class="form-group">
+                    <label for="">Niveau comprehension</label>
+                    <select class="form-control form-control-sm">
+                      <option>Small select</option>
+                    </select>
+                  </div>
+
+                </div>
+
+                <div class="col-md-6">
+
+                  <div class="form-group">
+                    <label for="">Niveau ecris</label>
+                    <select class="form-control form-control-sm">
+                      <option>Small select</option>
+                    </select>
+                  </div>
+
+                </div>
+
+
+
+                <div class="col-md-6">
+
+                  <div class="form-group">
+                    <label for="">Niveau parlé</label>
+                    <select class="form-control form-control-sm">
+                      <option>Small select</option>
+                    </select>
+                  </div>
+
+                </div>
+
+              </div>
+            </fom>
+
+          </div>
+
+          <div class="lang-count col-md-3">
+            <div class="card text-white lang-active" style="margin: auto;">
+              <div class="card-body">
+                <h5 class="card-title">Nombre de langues<br />2</h5>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!----------x------ Form and lang count content ----------x----------->
+
+
+        <!----------------- lang list card ---------------------->
+        <div class="row jumbotron">
+
+
+          <!------------------------ Lang Row -------------------------->
+
+          <div class="card col-12 lang-row">
+            <div class="card-body ">
+              <div class="row">
+                <div class="col-md-8">
+
+                  <div class="lang-name">
+                    <span>Francais</span>
+                  </div>
+
+                  <div class="lang-speak">
+                    <span class="title">Niveau parlé:&nbsp;</span>
+                    <span>Courant</span>
+                  </div>
+
+                  <div class="lang-write">
+                    <span class="title">Niveau écris:&nbsp;</span>
+                    <span>Courant</span>
+                  </div>
+
+                  <div class="lang-listen">
+                    <span class="title">Niveau comprehension:&nbsp;</span>
+                    <span>Courant</span>
+                  </div>
+
+
+                </div>
+                <div class="col-md-2">
+
+                  <div class="control-actions">
+                    <button class="btn btn-sm btn-block btn-success">Modifier</button>
+                    <button class="btn btn-sm btn-block btn-warning">Details</button>
+                    <button class="btn btn-sm btn-block btn-danger">Supprimer</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <!------------------------ Lang Row -------------------------->
+
+
+
+
+
+          <!------------------------ Lang Row -------------------------->
+
+          <div class="card col-12 lang-row">
+            <div class="card-body ">
+              <div class="row">
+                <div class="col-md-8">
+
+                  <div class="lang-name">
+                    <span>Francais</span>
+                  </div>
+
+                  <div class="lang-speak">
+                    <span class="title">Niveau parlé:&nbsp;</span>
+                    <span>Courant</span>
+                  </div>
+
+                  <div class="lang-write">
+                    <span class="title">Niveau écris:&nbsp;</span>
+                    <span>Courant</span>
+                  </div>
+
+                  <div class="lang-listen">
+                    <span class="title">Niveau comprehension:&nbsp;</span>
+                    <span>Courant</span>
+                  </div>
+
+
+                </div>
+                <div class="col-md-2">
+
+                  <div class="control-actions">
+                    <button class="btn btn-sm btn-block btn-success">Modifier</button>
+                    <button class="btn btn-sm btn-block btn-warning">Details</button>
+                    <button class="btn btn-sm btn-block btn-danger">Supprimer</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <!------------------------ Lang Row -------------------------->
+
+
+
+
+
+          <!------------------------ Lang Row -------------------------->
+
+          <div class="card col-12 lang-row">
+            <div class="card-body ">
+              <div class="row">
+                <div class="col-md-8">
+
+                  <div class="lang-name">
+                    <span>Francais</span>
+                  </div>
+
+                  <div class="lang-speak">
+                    <span class="title">Niveau parlé:&nbsp;</span>
+                    <span>Courant</span>
+                  </div>
+
+                  <div class="lang-write">
+                    <span class="title">Niveau écris:&nbsp;</span>
+                    <span>Courant</span>
+                  </div>
+
+                  <div class="lang-listen">
+                    <span class="title">Niveau comprehension:&nbsp;</span>
+                    <span>Courant</span>
+                  </div>
+
+
+                </div>
+                <div class="col-md-2">
+
+                  <div class="control-actions">
+                    <button class="btn btn-sm btn-block btn-success">Modifier</button>
+                    <button class="btn btn-sm btn-block btn-warning">Details</button>
+                    <button class="btn btn-sm btn-block btn-danger">Supprimer</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <!------------------------ Lang Row -------------------------->
+
+
+        </div>
+
+        <!--------x-------- lang list card ---------x------------>
+
+      </div>
     </div>
+
 
 
   </div>

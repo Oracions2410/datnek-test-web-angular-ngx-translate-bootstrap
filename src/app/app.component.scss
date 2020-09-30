@@ -1,0 +1,47 @@
+
+body {
+    background-color: #000;
+}
+.main {
+    background-color: #EEE;
+    color: #007Bff;
+    margin-top: 20px
+}
+
+.lang-active {
+    background-color: coral;
+    color: white;
+}
+
+.control-actions {
+    display: flex;
+    justify-content: row;
+}
+.control-actions .btn {
+    margin: 0 2px;
+}
+
+.control-actions .btn-danger {
+    margin-right: 0;
+}
+
+.lang-name, .lang-speak, .lang-write, .lang-listen {
+    display: inline-block;
+    margin: 0 5px;
+    font-size: 12px;
+
+    .title {
+        color: #000;
+        font-weight: bold;
+    }
+}
+
+.lang-name {
+    color: coral;
+    font-weight: bold;
+}
+
+.lang-row {
+    margin: 4px 0;
+
+}
