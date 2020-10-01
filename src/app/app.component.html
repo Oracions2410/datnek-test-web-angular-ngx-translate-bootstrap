@@ -3,21 +3,6 @@
 <div class="container">
   <div class="mt-10">
 
-    <!---
-    <div>
-      <h2>{{ 'FORM.TITLE' | translate }}</h2>
-      <label>
-        {{ 'HOME.SELECT' | translate }}
-        <select #langSelect (change)="translate.use(langSelect.value)">
-          <option *ngFor="let lang of translate.getLangs()" [value]="lang" [selected]="lang === translate.currentLang">
-            {{ lang }}</option>
-        </select>
-      </label>
-    </div>
--->
-
-
-
     <div class="main card text-center">
 
       <div class="card-header">
@@ -70,14 +55,14 @@
 
           <div class="add-lang-form-card col-md-7">
             <h4>{{ 'FORM.TITLE' | translate }}</h4>
-            <form>
+            <form [formGroup]="form" (ngSubmit)="onSubmit()">
               <div class="row">
 
                 <div class="col-md-6">
 
                   <div class="form-group">
                     <label for="">{{ 'FORM.LANGUAGE' | translate }}</label>
-                    <select class="form-control form-control-sm">
+                    <select formControlName="language" class="form-control form-control-sm">
                       <option *ngFor="let language of lang; let index = i" [attr.data-index]="i">
                         <span *ngIf="language.notation === 'fr-FR'">{{ 'LANG.FRENCH' | translate }}</span>
                         <span *ngIf="language.notation === 'en-EN'">{{ 'LANG.ENGLISH' | translate }}</span>
@@ -92,7 +77,7 @@
 
                   <div class="form-group">
                     <label for="">{{  'FORM.SPEAK_LABEL' | translate }}</label>
-                    <select class="form-control form-control-sm">
+                    <select formControlName="speak" class="form-control form-control-sm">
                       <option *ngFor="let level of levels; let index = i" [attr.data-index]="i">
                         <span *ngIf="level.number === 0">{{ 'LEVELS.ONE' | translate }}</span>
                         <span *ngIf="level.number === 1">{{ 'LEVELS.TWO' | translate }}</span>
@@ -108,7 +93,7 @@
 
                   <div class="form-group">
                     <label for="">{{  'FORM.WRITE_LABEL' | translate }}</label>
-                    <select class="form-control form-control-sm">
+                    <select formControlName="write" class="form-control form-control-sm">
                       <option *ngFor="let level of levels; let index = i" [attr.data-index]="i">
                         <span *ngIf="level.number === 0">{{ 'LEVELS.ONE' | translate }}</span>
                         <span *ngIf="level.number === 1">{{ 'LEVELS.TWO' | translate }}</span>
@@ -126,7 +111,7 @@
 
                   <div class="form-group">
                     <label for="">{{  'FORM.LISTEN_LABEL' | translate }}</label>
-                    <select class="form-control form-control-sm">
+                    <select formControlName="listen" class="form-control form-control-sm">
                       <option *ngFor="let level of levels; let index = i" [attr.data-index]="i">
                         <span *ngIf="level.number === 0">{{ 'LEVELS.ONE' | translate }}</span>
                         <span *ngIf="level.number === 1">{{ 'LEVELS.TWO' | translate }}</span>
@@ -149,7 +134,7 @@
           <div class="lang-count col-md-3">
             <div class="card text-white lang-active" style="margin: auto;">
               <div class="card-body">
-                <h5 class="card-title">{{ 'LANG_NUMBER_LABEL' | translate }}<br />{{ userLang.length }}</h5>
+                <h5 class="card-title">{{ 'LANG_NUMBER_LABEL' | translate }}<br />{{ fetchLang.length }}</h5>
 
               </div>
             </div>
@@ -165,7 +150,7 @@
           <h4>{{ 'USER_LANG.TITLE' | translate }}</h4>
           <!------------------------ Lang Row -------------------------->
 
-          <div *ngFor="let language of userLang; let index = i" [attr.data-index]="i" class="card col-12 lang-row">
+          <div *ngFor="let language of fetchLang; let index = i" [attr.data-index]="i" class="card col-12 lang-row">
             <div class="card-body ">
               <div class="row">
                 <div class="col-md-8">

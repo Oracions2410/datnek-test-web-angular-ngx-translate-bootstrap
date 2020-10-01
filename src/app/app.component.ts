@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { LanguageService } from './services/language.service';
+
+import { FormBuilder, FormGroup } from '@angular/forms'
 
 
 @Component({
@@ -61,9 +64,25 @@ export class AppComponent {
     },
   ]
 
+  fetchLang: any = []
+
   activeLang: any = this.lang[0]
 
-  constructor(public translate: TranslateService) {
+  form: FormGroup
+
+  constructor(
+    public translate: TranslateService,
+    private languageService: LanguageService,
+    private formBuilder: FormBuilder
+  ) {
+
+    this.form = this.formBuilder.group({
+      name: [''],
+      speak: [''],
+      write: [''],
+      listen: ['']
+    })
+
     translate.addLangs(['en-US', 'fr-FR', 'nl-NL']);
     translate.setDefaultLang('en-EN');
 
@@ -73,6 +92,13 @@ export class AppComponent {
     // console.log('Browser Lang =', browserLang);
     //console.log('Navigator Lang =', navigator.language);
     //console.log('Current Lang =', translate.currentLang);
+  }
+
+  ngOnInit() {
+    this.languageService.getLanguages().subscribe((response: any[]) => {
+      this.fetchLang = response.languages
+      console.log(this.fetchLang)
+    })
   }
 
 
@@ -95,5 +121,16 @@ export class AppComponent {
     return (level && level[0] && level[0].number < 4) ? level[0].label.number : 0
   }
 
+  onSubmit() {
+    let formData: any = new FormData()
+    formData.append('name', this.form.get('name').value)
+    formData.append('speak', this.form.get('speak').value)
+    formData.append('write', this.form.get('write').value)
+    formData.append('listen', this.form.get('listen').value)
+
+    this.languageService.postLanguage(formData).subscribe(response => {
+      console.log(response)
+    })
+  }
 
 }

@@ -10,6 +10,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { ModalComponent } from './components/modal/modal.component';
+import { ReactiveFormsModule } from '@angular/forms'
 
 
 
@@ -28,6 +29,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     ModalComponent
   ],
   imports: [
+    ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
